@@ -1,3 +1,13 @@
+// Colors
+
+$lectureColor: #ffe778;
+$labColor: #e4bef5;
+$practiceColor: #ccf997;
+$examColor: #ffb2ac;
+$testColor: #ffcac6;
+$consultationColor: #c1e9ef;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -102,28 +112,29 @@ body {
   margin-bottom: 3px;
 }
 
+
 .lecture {
-  background-color: #ffe778;
+  background-color: $lectureColor;
 }
 
 .laboratory {
-  background-color: #e4bef5;
+  background-color: $labColor;
 }
 
 .practice {
-  background-color: #ccf997;
+  background-color: $practiceColor;
 }
 
 .exam {
-  background-color: #ffb2ac;
+  background-color: $examColor;
 }
 
 .test {
-  background-color: #ffcac6;
+  background-color: $testColor;
 }
 
 .consultation {
-  background-color: #c1e9ef;
+  background-color: $consultationColor;
 }
 
 
@@ -135,23 +146,27 @@ body {
 }
 
 .lastpair-td .lecture {
-  background-color: #b5a453;
+  background-color: desaturate(darken($lectureColor, 25%), 50%);
 }
 
 .lastpair-td .laboratory {
-  background-color: #84708e;
+  background-color: desaturate(darken($labColor, 25%), 50%);
 }
 
 .lastpair-td .practice {
-  background-color: #8aa669;
+  background-color:desaturate(darken($practiceColor, 25%), 50%);
 }
 
 .lastpair-td .exam {
-  background-color: #a76a65;
+  background-color: desaturate(darken($examColor, 25%), 50%);
+}
+
+.lastpair-td .test {
+  background-color: desaturate(darken($testColor, 25%), 50%);
 }
 
 .lastpair-td .consultation {
-  background-color: #87a5aa;
+  background-color: desaturate(darken($consultationColor, 25%), 50%);
 }
 
 
