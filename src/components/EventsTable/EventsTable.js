@@ -79,11 +79,15 @@ class EventsTable extends Component {
         return result;
     }
 
-    getTableRows(timetable) {
+    getTableRows(timetable, filter) {
         let tableHeaders = this.getTableHeaders(timetable);
         let table = [];
         let events = this.convertEvents(timetable);
      
+        if (filter) {
+            events = events.filter(e => 
+                `${e.subject.brief} ${e.subject.title}`.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+        }
 
         for (let i = 0; i < MAX_EVENTS_COUNT; i++) {
             table.push(events.filter(e => e.number === i+1));
@@ -108,9 +112,9 @@ class EventsTable extends Component {
     }
 
     render() {
-        const tableRows = this.getTableRows(this.state.timetable);
+        const tableRows = this.getTableRows(this.state.timetable, this.props.filterText);
         const info = this.state.timetable ? <EventsTableInfo /> : '';
-        const tableHeaders = this.getTimetableDates(this.state.timetable)
+        const tableHeaders = this.getTableHeaders(this.state.timetable)
             .map(h => <th key={h.getTime()}>{h.toLocaleDateString()}</th>);
 
         return (
