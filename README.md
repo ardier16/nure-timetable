@@ -1,6 +1,10 @@
 # nure-timetable
 
-Vue.js version.
+The time table for NURE students
+[Work in progress]
+
+Written in Vue.js
+Using NURE CIST API
 
 ## Project setup
 ```
