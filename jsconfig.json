@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "Store": ["src/store/*"],
+      "Common": ["src/common/*"],
+      "Router": ["src/router/*"],
+      "Utils": ["src/utils/*"],
+      "Services": ["src/services/*"],
+      "Assets": ["src/assets/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
