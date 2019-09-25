@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# Cache files
+.eslintcache
+
 # local env files
 .env.local
 .env.*.local

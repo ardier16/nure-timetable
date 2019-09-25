@@ -3,15 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>nure-timetable</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .logo-wrp {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .logo {
+        position: absolute;
+        max-width: 20rem;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but nure-timetable doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but timetable doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <div class="logo-wrp">
+        <img class="logo" src="/img/logo.svg">
+      </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
