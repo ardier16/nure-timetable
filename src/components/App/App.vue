@@ -5,7 +5,7 @@
     <main class="app__main">
       <img
         class="app__logo"
-        src="~Assets/img/logo.svg"
+        src="@assets/img/logo.svg"
       >
 
       <router-view />
@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import AppHeader from 'Components/Header'
-import AppFooter from 'Components/Footer'
+import AppHeader from '@components/header'
+import AppFooter from '@components/footer'
 
 export default {
   name: 'app',
@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/reset.scss';
+
 .app {
   min-height: 100vh;
   display: flex;
