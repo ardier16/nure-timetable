@@ -41,7 +41,7 @@ module.exports = {
       sass: {
         sourceMap: true,
         sourceMapContents: false,
-        data: ``,
+        data: `@import '@/scss/ui.scss';`,
       },
     },
   },

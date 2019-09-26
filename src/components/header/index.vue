@@ -12,8 +12,8 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  background-color: black;
-  color: white;
+  background-color: $color-primary;
+  color: $color-text-inverse;
   padding: 1.6rem 4rem;
 }
 </style>

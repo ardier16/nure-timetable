@@ -29,7 +29,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/scss/reset.scss';
+html {
+  font-family: $app-font-family;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+}
 
 .app {
   min-height: 100vh;

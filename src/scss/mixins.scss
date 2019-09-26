@@ -59,7 +59,29 @@ $x-large: 1920px;
 }
 
 @mixin box-shadow () {
-  box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.15)
+  box-shadow: 0 0.4rem 1rem 0 rgba($color-black 0.15)
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+  }
 }
 
 @mixin respond-to($media) {
