@@ -1,29 +1,38 @@
 <template>
   <div class="app">
-    <div class="app__logo-wrp">
+    <app-header class="app__header" />
+
+    <main class="app__main">
       <img
         class="app__logo"
         src="~Assets/img/logo.svg"
       >
-    </div>
 
-    <router-view />
+      <router-view />
+    </main>
+
+    <app-footer class="app__footer" />
   </div>
 </template>
 
 <script>
+import AppHeader from 'Components/Header'
+import AppFooter from 'Components/Footer'
+
 export default {
   name: 'app',
+  components: {
+    AppHeader,
+    AppFooter,
+  },
 }
 </script>
 
 <style lang="scss">
 .app {
-  &__logo-wrp {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   &__logo {
     position: absolute;
@@ -31,6 +40,10 @@ export default {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__footer {
+    margin-top: auto;
   }
 }
 </style>
