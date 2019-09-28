@@ -21,4 +21,8 @@ export class Pair {
       shortName: _get(record, 'teachers[0].shortName', ''),
     }
   }
+
+  get isLast () {
+    return this.startDate.getTime() < Date.now()
+  }
 }
