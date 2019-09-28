@@ -3,11 +3,6 @@
     <app-header class="app__header" />
 
     <main class="app__main">
-      <img
-        class="app__logo"
-        src="@assets/img/logo.svg"
-      >
-
       <router-view />
     </main>
 
@@ -43,12 +38,11 @@ body {
   display: flex;
   flex-direction: column;
 
-  &__logo {
-    position: absolute;
-    max-width: 20rem;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  &__main {
+    @include container;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   &__footer {

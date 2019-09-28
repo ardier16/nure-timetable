@@ -1,9 +1,11 @@
 <template>
   <footer class="footer">
-    <img
-      class="footer__logo"
-      src="@assets/img/logo-full.svg"
-    >
+    <div class="footer__logo-wrp">
+      <img
+        class="footer__logo"
+        src="@assets/img/logo-full.svg"
+      >
+    </div>
 
     <p class="footer__copyright">
       {{ 'footer.copyright' | translate }}
@@ -41,13 +43,16 @@ export default {
     flex-direction: column;
   }
 
-  &__logo {
-    max-height: 2.8rem;
+  &__logo-wrp {
     width: 20rem;
 
     @include respond-to(small) {
       display: none;
     }
+  }
+
+  &__logo {
+    max-height: 2.8rem;
   }
 
   &__copyright {

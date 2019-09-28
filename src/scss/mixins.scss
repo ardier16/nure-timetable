@@ -16,7 +16,7 @@ $x-large: 1920px;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   min-height: 3.6rem;
   background-color: transparent;
@@ -59,7 +59,7 @@ $x-large: 1920px;
 }
 
 @mixin box-shadow () {
-  box-shadow: 0 0.4rem 1rem 0 rgba($color-black 0.15)
+  box-shadow: 0 0.4rem 1rem 0 rgba($color-black, 0.05)
 }
 
 @mixin ellipsis() {
