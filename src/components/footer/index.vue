@@ -12,8 +12,11 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  @include container;
+
   background-color: $color-primary;
   color: $color-text-inverse;
-  padding: 1.6rem 4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 </style>

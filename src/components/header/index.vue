@@ -1,6 +1,9 @@
 <template>
   <header class="header">
-    {{ 'header.title' | translate }}
+    <img
+      class="header__logo"
+      src="@assets/img/logo-full.svg"
+    >
   </header>
 </template>
 
@@ -12,8 +15,15 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  @include container;
+
   background-color: $color-primary;
   color: $color-text-inverse;
-  padding: 1.6rem 4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+
+  &__logo {
+    max-height: 3.6rem;
+  }
 }
 </style>
