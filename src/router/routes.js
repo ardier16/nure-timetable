@@ -8,6 +8,10 @@ export const routes = {
     name: 'landing',
     path: withOptionalLocalePrefix('/'),
   },
+  timetable: {
+    name: 'timetable',
+    path: withOptionalLocalePrefix('/timetable'),
+  },
 }
 
 function withOptionalLocalePrefix (path) {
@@ -25,4 +29,8 @@ export function extractChildRoute (route) {
   }
 }
 
-export const routeNames = Object.values(routes).map(r => r.name)
+export const routeNames = Object.entries(routes)
+  .reduce((acc, [key, value]) => ({
+    ...acc,
+    [key]: value.name,
+  }), {})

@@ -25,6 +25,9 @@
 import UiText from '@components/ui/ui-text'
 import UiButton from '@components/ui/ui-button'
 
+import { routeNames } from '@router/routes'
+import { i18nRouterPush } from '@router/i18n'
+
 export default {
   name: 'search-form',
   components: {
@@ -40,6 +43,12 @@ export default {
 
   methods: {
     submit () {
+      i18nRouterPush({
+        name: routeNames.timetable,
+        query: {
+          group: this.form.group,
+        },
+      })
     },
   },
 }
