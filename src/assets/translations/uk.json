@@ -1,0 +1,15 @@
+{
+  "header": {
+    "title": "NURE розклад"
+  },
+
+  "locales": {
+    "eng": "Eng",
+    "rus": "Рус",
+    "ukr": "Укр"
+  },
+
+  "footer": {
+    "copyright": "Автор: @ardier16"
+  }
+}

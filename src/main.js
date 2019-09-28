@@ -6,13 +6,13 @@ import VueHead from 'vue-head'
 import './devtools'
 import { initI18n } from './i18n'
 
-import translate from 'Utils/translate'
+import translate from '@utils/translate'
 
-import App from './components/App'
+import App from './components/app'
 
-import store from 'Store'
+import store from '@store'
 
-import '@/styles/reset.scss'
+import '../node_modules/@mdi/font/css/materialdesignicons.min.css'
 
 async function init () {
   initI18n(store)
@@ -25,7 +25,7 @@ async function init () {
   Vue.filter('translate', translate)
 
   new Vue({
-    router: require('Router').default,
+    router: require('@router').default,
     store,
     render: h => h(App),
   }).$mount('#app')

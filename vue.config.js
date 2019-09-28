@@ -20,30 +20,30 @@ module.exports = {
     resolve: {
       symlinks: false,
       alias: {
-        'Assets': `${root}/assets`,
-        'Store': `${root}/store`,
-        'Components': `${root}/components`,
-        'Constants': `${root}/constants`,
-        'Common': `${root}/common`,
-        'Router': `${root}/router`,
-        'Utils': `${root}/utils`,
-        'Services': `${root}/services`
-      }
-    }
+        '@assets': `${root}/assets`,
+        '@store': `${root}/store`,
+        '@components': `${root}/components`,
+        '@constants': `${root}/constants`,
+        '@common': `${root}/common`,
+        '@router': `${root}/router`,
+        '@utils': `${root}/utils`,
+        '@services': `${root}/services`,
+      },
+    },
   },
   pluginOptions: {
     webpackBundleAnalyzer: {
-      openAnalyzer: false
-    }
+      openAnalyzer: false,
+    },
   },
   css: {
     loaderOptions: {
       sass: {
         sourceMap: true,
         sourceMapContents: false,
-        data: ``
-      }
-    }
+        data: `@import '@/scss/ui.scss';`,
+      },
+    },
   },
 
   chainWebpack: config => {
@@ -73,5 +73,5 @@ module.exports = {
       .before('sass-loader')
       .end()
       .end()
-  }
+  },
 }

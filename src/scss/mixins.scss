@@ -1,0 +1,169 @@
+@import 'colors';
+
+/* https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints */
+$x-small: 480px;
+$small: 600px;
+$tablet: 820px;
+$medium: 1024px;
+$x-medium: 1200px;
+$large: 1440px;
+$x-large: 1920px;
+
+@mixin button () {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  min-height: 3.6rem;
+  background-color: transparent;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+@mixin button-primary () {
+  @include button();
+
+  border-radius: 0.5rem;
+  background-color: $color-button-primary;
+  box-shadow: 0 0.5rem 1rem 0 rgba($color-black, 0.15);
+  color: $color-button-primary-txt;
+
+  &[disabled] {
+    box-shadow: none;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+@mixin button-secondary () {
+  @include button();
+
+  color: $color-button-secondary-txt;
+  transition: 0.3s ease-out;
+
+  &[disabled] {
+    color: $color-button-secondary-disabled-txt;
+    pointer-events: none;
+  }
+
+  &:not([disabled]):hover {
+    background-color: $color-button-secondary-hover;
+  }
+}
+
+@mixin box-shadow () {
+  box-shadow: 0 0.4rem 1rem 0 rgba($color-black 0.15)
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: $color-light;
+    width: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-dark;
+  }
+}
+
+@mixin scrollbar-invisible {
+  &::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+    display: none; // Safari and Chrome
+  }
+
+  /* Optional: show position indicator in red */
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  -ms-overflow-style: none; // IE 10+
+  scrollbar-width: none; // Firefox
+}
+
+@mixin respond-to($media) {
+  @if $media == xsmall {
+    @media only screen and (max-width: $x-small - 1px) {
+      @content;
+    }
+  } @else if $media == small {
+    @media only screen and (max-width: $small - 1px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: $tablet - 1px) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media only screen and (max-width: $medium) {
+      @content;
+    }
+  } @else if $media == xmedium {
+    @media only screen and (max-width: $x-medium - 1px) {
+      @content;
+    }
+  } @else if $media == large {
+    @media only screen and (max-width: $large - 1px) {
+      @content;
+    }
+  } @else if $media == xlarge {
+    @media only screen and (max-width: $x-large - 1px) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $media) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-height($media) {
+  @media only screen and (max-height: $media) {
+    @content;
+  }
+}
+
+@mixin respond-to-custom($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin container() {
+  padding-left: 16rem;
+  padding-right: 16rem;
+
+  @include respond-to(large) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  @include respond-to(medium) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include respond-to(small) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

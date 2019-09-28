@@ -1,0 +1,51 @@
+// Base colors
+$color-white: #fff;
+$color-black: #000;
+$color-canary: #e9c33b;
+$color-canary-dark: #c9a321;
+$color-canary-light: #d3cbaf;
+$color-punch: #e76d6d;
+$color-punch-dark: #ba4343;
+$color-punch-light: #d0a7a7;
+$color-orchid: #8d7deb;
+$color-orchid-dark: #6250c7;
+$color-orchid-light: #b0acc6;
+$color-parakeet: #7cda74;
+$color-parakeet-dark: #5da556;
+$color-parakeet-light: #a7bba5;
+$color-coal: #343434;
+$color-grey-light: #e5e5e5;
+$color-grey: #b4b4b4;
+
+// App colors
+$color-primary: $color-coal;
+$color-secondary: $color-grey-light;
+$color-text: $color-primary;
+$color-text-inverse: $color-white;
+$color-text-inverse-dark: $color-grey;
+$color-app-bg: $color-white;
+
+// Pair colors
+$color-exam: $color-punch;
+$color-exam-dark: $color-punch-dark;
+$color-exam-light: $color-punch-light;
+
+$color-lab: $color-orchid;
+$color-lab-dark: $color-orchid-dark;
+$color-lab-light: $color-orchid-light;
+
+$color-lecture: $color-canary;
+$color-lecture-dark: $color-canary-dark;
+$color-lecture-light: $color-canary-light;
+
+$color-practice: $color-parakeet;
+$color-practice-dark: $color-parakeet-dark;
+$color-practice-light: $color-parakeet-light;
+
+// Button colors
+$color-button-primary: $color-primary;
+$color-button-primary-txt: $color-white;
+
+$color-button-secondary-txt: $color-primary;
+$color-button-secondary-disabled-txt: $color-secondary;
+$color-button-secondary-hover: $color-secondary;

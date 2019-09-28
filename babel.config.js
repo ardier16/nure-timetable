@@ -1,9 +1,9 @@
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/app',
   ],
   plugins: [
     'syntax-dynamic-import',
-    '@babel/proposal-unicode-property-regex'
-  ]
+    '@babel/proposal-unicode-property-regex',
+  ],
 }
