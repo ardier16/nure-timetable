@@ -26,21 +26,35 @@ $color-text-inverse-dark: $color-grey;
 $color-app-bg: $color-white;
 
 // Pair colors
-$color-exam: $color-punch;
-$color-exam-dark: $color-punch-dark;
-$color-exam-light: $color-punch-light;
+$pair-primary-colors: (
+  'lecture': $color-canary,
+  'lab': $color-orchid,
+  'practice': $color-parakeet,
+  'exam': $color-punch,
+  'consultation': $color-parakeet,
+  'test': $color-parakeet,
+  'course-work': $color-parakeet
+);
 
-$color-lab: $color-orchid;
-$color-lab-dark: $color-orchid-dark;
-$color-lab-light: $color-orchid-light;
+$pair-light-colors: (
+  'lecture': $color-canary-light,
+  'lab': $color-orchid-light,
+  'practice': $color-parakeet-light,
+  'exam': $color-punch-light,
+  'consultation': $color-parakeet-light,
+  'test': $color-parakeet-light,
+  'course-work': $color-parakeet-light
+);
 
-$color-lecture: $color-canary;
-$color-lecture-dark: $color-canary-dark;
-$color-lecture-light: $color-canary-light;
-
-$color-practice: $color-parakeet;
-$color-practice-dark: $color-parakeet-dark;
-$color-practice-light: $color-parakeet-light;
+$pair-dark-colors: (
+  'lecture': $color-canary-dark,
+  'lab': $color-orchid-dark,
+  'practice': $color-parakeet-dark,
+  'exam': $color-punch-dark,
+  'consultation': $color-parakeet-dark,
+  'test': $color-parakeet-dark,
+  'course-work': $color-parakeet-dark
+);
 
 // Button colors
 $color-button-primary: $color-primary;

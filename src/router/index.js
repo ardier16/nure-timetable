@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Landing from '@components//landing'
+import Timetable from '@components//timetable'
+
 import { routes } from './routes'
 
 Vue.use(Router)
@@ -13,6 +15,10 @@ const router = new Router({
     {
       ...routes.landing,
       component: Landing,
+    },
+    {
+      ...routes.timetable,
+      component: Timetable,
     },
     {
       path: '*',

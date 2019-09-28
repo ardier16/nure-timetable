@@ -12,5 +12,15 @@
   "landing": {
     "search-placeholder": "Type your group name here, e.g. ІПЗм-19-3",
     "search-btn": "Search"
+  },
+
+  "pair-types-short": {
+    "lecture": "Lecture",
+    "practice": "Practice",
+    "lab": "Lab",
+    "consultation": "Consult.",
+    "test": "Test",
+    "exam": "Exam",
+    "course-work": "Course work"
   }
 }
