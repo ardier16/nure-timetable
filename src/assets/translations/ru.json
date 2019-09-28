@@ -1,5 +1,11 @@
 {
   "header": {
-    "title": "NURE Timetable"
+    "title": "NURE расписание"
+  },
+  
+  "locales": {
+    "eng": "Eng",
+    "rus": "Рус",
+    "ukr": "Укр"
   }
 }

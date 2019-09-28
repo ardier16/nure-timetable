@@ -2,15 +2,15 @@ import { config } from '@/config'
 
 export const locales = {
   en: {
-    text: 'ENG',
+    translationId: 'eng',
     isoCode: 'en',
   },
   ru: {
-    text: 'RUS',
+    translationId: 'rus',
     isoCode: 'ru',
   },
   uk: {
-    text: 'UKR',
+    translationId: 'ukr',
     isoCode: 'uk',
   },
 }

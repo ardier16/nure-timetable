@@ -14,5 +14,5 @@ export function initI18n (store) {
   Vue.i18n.add(locales.ru.isoCode, translationsRu)
   Vue.i18n.add(locales.uk.isoCode, translationsUk)
 
-  Vue.i18n.set(DEFAULT_LOCALE)
+  Vue.i18n.set(localStorage.getItem('locale') || DEFAULT_LOCALE)
 }
