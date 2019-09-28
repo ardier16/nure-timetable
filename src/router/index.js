@@ -14,6 +14,10 @@ const router = new Router({
       ...routes.landing,
       component: Landing,
     },
+    {
+      path: '*',
+      redirect: routes.landing,
+    },
   ],
 })
 

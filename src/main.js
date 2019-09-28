@@ -10,6 +10,7 @@ import { initApi } from './api'
 import translate from '@utils/translate'
 
 import App from './components/app'
+import I18nRouterLink from './router/i18n-router-link'
 
 import store from '@store'
 import { config } from '@/config'
@@ -21,6 +22,8 @@ async function init () {
   initApi(config.API_URL)
 
   Vue.config.productionTip = false
+
+  Vue.component('i18n-router-link', I18nRouterLink)
 
   Vue.use(VueScrollTo, { offset: -25 })
   Vue.use(VueLazyLoad)
