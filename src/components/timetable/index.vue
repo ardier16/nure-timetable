@@ -2,7 +2,7 @@
   <div class="timetable">
     <div class="timetable__pairs">
       <pair-card
-        v-for="(pair, i) in pairs"
+        v-for="(pair, i) in filteredPairs"
         :key="i"
         :pair="pair"
         class="timetable__pair"
@@ -27,6 +27,12 @@ export default {
     ...mapGetters({
       pairs: types.pairs,
     }),
+
+    filteredPairs () {
+      return this.pairs.slice(0).sort((a, b) => {
+        return a.startDate.getTime() - b.startDate.getTime()
+      })
+    },
   },
 
   async created () {
