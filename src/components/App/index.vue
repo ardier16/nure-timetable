@@ -38,13 +38,6 @@ body {
   display: flex;
   flex-direction: column;
 
-  &__main {
-    @include container;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
   &__footer {
     margin-top: auto;
   }

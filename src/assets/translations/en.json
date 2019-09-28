@@ -7,5 +7,10 @@
 
   "footer": {
     "copyright": "Created by @ardier16"
+  },
+
+  "landing": {
+    "search-placeholder": "Type your group name here, e.g. ІПЗм-19-3",
+    "search-btn": "Search"
   }
 }
