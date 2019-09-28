@@ -1,12 +1,14 @@
 import _get from 'lodash/get'
 
+import { pairTypes } from '@constants/pair-types'
+
 export class Pair {
   constructor (record) {
     this.auditory = record.auditory
 
     this.startDate = new Date(record.startDate)
     this.endDate = new Date(record.endDate)
-    this.type = record.pairType
+    this.type = pairTypes[record.pairType]
 
     this.subject = {
       name: _get(record, 'subject.name'),
