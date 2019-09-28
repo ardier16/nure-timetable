@@ -28,6 +28,7 @@ module.exports = {
         '@router': `${root}/router`,
         '@utils': `${root}/utils`,
         '@services': `${root}/services`,
+        '@records': `${root}/records`,
       },
     },
   },

@@ -11,7 +11,8 @@
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@assets/*": ["./src/assets/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@constants/*": ["./src/constants/*"],
+      "@records/*": ["./src/records/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

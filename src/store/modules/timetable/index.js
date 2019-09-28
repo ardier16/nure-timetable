@@ -1,5 +1,6 @@
 import { types } from '@store/types'
 import { api } from '@/api'
+import { Pair } from '@records/pair'
 
 export const state = {
   pairs: [],
@@ -15,7 +16,10 @@ export const actions = {
   async [types.LOAD_TIMETABLE] ({ commit }, group) {
     const pairs = await api().get({
       endpoint: 'timetable',
-      query: { group },
+      query: {
+        group,
+        include: ['groups', 'subject', 'teachers'],
+      },
     })
 
     commit(types.SET_PAIRS, pairs)
@@ -23,7 +27,7 @@ export const actions = {
 }
 
 export const getters = {
-  [types.pairs]: state => state.pairs,
+  [types.pairs]: state => state.pairs.map(p => new Pair(p)),
 }
 
 export default {

@@ -2,6 +2,8 @@
   <div class="timetable">
     Timetable here
     Group: {{ $route.query.group }}
+    <br>
+    {{ pairs[0] }}
   </div>
 </template>
 
