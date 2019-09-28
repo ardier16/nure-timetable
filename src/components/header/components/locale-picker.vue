@@ -29,11 +29,9 @@ export default {
     UiButton,
   },
 
-  data () {
-    return {
-      locales,
-    }
-  },
+  data: () => ({
+    locales,
+  }),
 
   computed: {
     ...mapGetters({

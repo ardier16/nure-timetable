@@ -6,10 +6,10 @@
     >
 
     <p class="footer__copyright">
-      Created by @ardier16
+      {{ 'footer.copyright' | translate }}
     </p>
 
-    <social-networks />
+    <social-networks class="footer__social-networks" />
   </footer>
 </template>
 
@@ -33,11 +33,21 @@ export default {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
+  @include respond-to(small) {
+    flex-direction: column;
+  }
+
   &__logo {
     max-height: 2.8rem;
+    width: 20rem;
+
+    @include respond-to(small) {
+      display: none;
+    }
   }
 
   &__copyright {
@@ -45,6 +55,15 @@ export default {
     color: $color-secondary;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
+  }
+
+  &__social-networks {
+    width: 20rem;
+
+    @include respond-to(small) {
+      width: 100%;
+      margin-top: 1rem;
+    }
   }
 }
 </style>

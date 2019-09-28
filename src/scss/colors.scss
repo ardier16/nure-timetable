@@ -14,13 +14,15 @@ $color-parakeet: #7cda74;
 $color-parakeet-dark: #5da556;
 $color-parakeet-light: #a7bba5;
 $color-coal: #343434;
-$color-grey: #e5e5e5;
+$color-grey-light: #e5e5e5;
+$color-grey: #b4b4b4;
 
 // App colors
 $color-primary: $color-coal;
-$color-secondary: $color-grey;
+$color-secondary: $color-grey-light;
 $color-text: $color-primary;
 $color-text-inverse: $color-white;
+$color-text-inverse-dark: $color-grey;
 $color-app-bg: $color-white;
 
 // Pair colors

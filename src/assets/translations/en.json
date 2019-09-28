@@ -1,11 +1,11 @@
 {
-  "header": {
-    "title": "NURE Timetable"
-  },
-
   "locales": {
     "eng": "Eng",
     "rus": "Рус",
     "ukr": "Укр"
+  },
+
+  "footer": {
+    "copyright": "Created by @ardier16"
   }
 }
