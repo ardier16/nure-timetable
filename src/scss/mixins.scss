@@ -84,6 +84,22 @@ $x-large: 1920px;
   }
 }
 
+@mixin scrollbar-invisible {
+  &::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+    display: none; // Safari and Chrome
+  }
+
+  /* Optional: show position indicator in red */
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  -ms-overflow-style: none; // IE 10+
+  scrollbar-width: none; // Firefox
+}
+
 @mixin respond-to($media) {
   @if $media == xsmall {
     @media only screen and (max-width: $x-small - 1px) {
