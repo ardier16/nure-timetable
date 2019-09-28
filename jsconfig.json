@@ -4,14 +4,14 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@store": ["src/store/*"],
-      "@common": ["src/common/*"],
-      "@router": ["src/router/*"],
-      "@utils": ["src/utils/*"],
-      "@services": ["src/services/*"],
-      "@assets": ["src/assets/*"],
-      "@constants": ["src/constants/*"]
+      "@components/*": ["./src/components/*"],
+      "@store/*": ["./src/store/*"],
+      "@common/*": ["./src/common/*"],
+      "@router/*": ["./src/router/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@services/*": ["./src/services/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@constants/*": ["./src/constants/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

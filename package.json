@@ -11,6 +11,7 @@
     "lint-fix": "eslint src --ext .js,.vue --cache --fix"
   },
   "dependencies": {
+    "@mdi/font": "^4.4.95",
     "lodash": "^4.17.15",
     "vue": "^2.5.17",
     "vue-head": "^2.1.1",

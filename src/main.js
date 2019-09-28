@@ -12,6 +12,8 @@ import App from './components/app'
 
 import store from '@store'
 
+import '../node_modules/@mdi/font/css/materialdesignicons.min.css'
+
 async function init () {
   initI18n(store)
   Vue.config.productionTip = false
