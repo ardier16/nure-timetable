@@ -1,12 +1,26 @@
 <template>
   <div class="timetable">
-    <div class="timetable__pairs">
-      <pair-card
-        v-for="(pair, i) in filteredPairs"
-        :key="i"
-        :pair="pair"
-        class="timetable__pair"
-      />
+    <div
+      v-if="pairs.length"
+      class="timetable__pairs">
+      <div
+        v-for="datePairs in pairsMap"
+        :key="datePairs.date.getTime()"
+        class="timetable__date-pairs"
+      >
+        <p class="timetable__date-pairs-date">
+          {{ datePairs.date.toLocaleDateString() }}
+        </p>
+
+        <div class="timetable__date-pairs-pairs">
+          <pair-card
+            v-for="(pair, i) in datePairs.pairs"
+            :key="i"
+            :pair="pair"
+            class="timetable__pair"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +30,8 @@ import PairCard from '@common/components/pair-card'
 
 import { mapActions, mapGetters } from 'vuex'
 import { types } from '@store/types'
+
+import { DateUtil } from '@utils/date.util'
 
 export default {
   name: 'timetable',
@@ -28,10 +44,21 @@ export default {
       pairs: types.pairs,
     }),
 
-    filteredPairs () {
-      return this.pairs.slice(0).sort((a, b) => {
-        return a.startDate.getTime() - b.startDate.getTime()
-      })
+    pairDates () {
+      const pairDates = this.pairs.map(p => p.startDate.getTime())
+      const startDate = new Date(Math.min(...pairDates))
+      const endDate = new Date(Math.max(...pairDates))
+
+      return DateUtil.getDatesArray(startDate, endDate)
+    },
+
+    pairsMap () {
+      return this.pairDates.map(date => ({
+        date,
+        pairs: this.pairs.filter(p => {
+          return p.startDate.toLocaleDateString() === date.toLocaleDateString()
+        }),
+      }))
     },
   },
 
@@ -54,10 +81,16 @@ export default {
   padding-top: 10rem;
   padding-bottom: 10rem;
 
-  &__pairs {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -1rem;
+  &__date-pairs {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    &-pairs {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -1rem;
+    }
   }
 
   &__pair {
