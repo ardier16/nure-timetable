@@ -41,6 +41,11 @@ export default {
 
 <style lang="scss" scoped>
 .timetable {
+  @include container;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
   &__date-pairs {
     &:not(:first-child) {
       margin-top: 2rem;

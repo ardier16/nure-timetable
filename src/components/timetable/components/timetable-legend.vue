@@ -4,26 +4,34 @@
       &nbsp;
     </p>
 
-    <p
-      v-for="number of Object.values(pairStartTimes)"
+    <div
+      v-for="[number, times] of Object.entries(pairTimes)"
       :key="number"
-      class="timetable-legend__pair-number-wrp"
+      class="timetable-legend__pair"
     >
-      <span class="timetable-legend__pair-number">
+      <p class="timetable-legend__pair-start">
+        {{ times.start }}
+      </p>
+
+      <p class="timetable-legend__pair-number">
         {{ number }}
-      </span>
-    </p>
+      </p>
+
+      <p class="timetable-legend__pair-end">
+        {{ times.end }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-import { pairStartTimes } from '@constants/pair-start-times'
+import { pairTimes } from '@constants/pair-times'
 
 export default {
   name: 'timetable-legend',
 
   data: () => ({
-    pairStartTimes,
+    pairTimes,
   }),
 }
 </script>
@@ -37,25 +45,27 @@ export default {
     border-bottom: 0.1rem solid $color-secondary;
   }
 
-  &__pair-number-wrp {
+  &__pair {
     height: 11rem;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 2rem;
+    justify-content: space-between;
+    flex-direction: column;
 
     &:not(:last-child) {
       border-bottom: 0.1rem solid $color-secondary;
     }
-  }
 
-  &__pair-number {
-    background-color: $color-primary;
-    color: $color-text-inverse;
-    padding: 1.2rem;
-    line-height: 1rem;
-    border-radius: 50%;
+    &-number {
+      background-color: $color-primary;
+      color: $color-text-inverse;
+      padding: 1.2rem;
+      line-height: 1rem;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 2rem;
+    }
   }
 }
 </style>

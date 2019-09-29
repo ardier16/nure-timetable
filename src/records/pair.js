@@ -1,7 +1,7 @@
 import _get from 'lodash/get'
 
 import { pairTypes } from '@constants/pair-types'
-import { pairStartTimes } from '@constants/pair-start-times'
+import { pairTimes } from '@constants/pair-times'
 
 export class Pair {
   constructor (record) {
@@ -32,6 +32,9 @@ export class Pair {
     const minutes = this.startDate.getMinutes()
     const time = [hours, minutes].join(':')
 
-    return pairStartTimes[time]
+    const pairNumber = Object.keys(pairTimes)
+      .find(key => pairTimes[key].start === time)
+
+    return pairNumber
   }
 }

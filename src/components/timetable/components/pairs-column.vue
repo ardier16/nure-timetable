@@ -11,7 +11,7 @@
     </p>
 
     <pairs-cell
-      v-for="number of Object.values(pairStartTimes)"
+      v-for="number of Object.keys(pairTimes)"
       :key="number"
       :pairs="pairs.filter(p => p.number === number)"
       class="pair-column__cell"
@@ -22,7 +22,7 @@
 <script>
 import PairsCell from './pairs-cell'
 
-import { pairStartTimes } from '@constants/pair-start-times'
+import { pairTimes } from '@constants/pair-times'
 import { DateUtil } from '@utils/date.util'
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
 
   data: () => ({
-    pairStartTimes,
+    pairTimes,
   }),
 
   computed: {

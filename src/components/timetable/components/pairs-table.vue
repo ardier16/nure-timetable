@@ -2,7 +2,7 @@
   <div class="pairs-table">
     <timetable-legend class="pairs-table__legend" />
 
-    <div id="kek" class="pairs-table__pairs">
+    <div class="pairs-table__pairs">
       <pairs-column
         v-for="datePairs in pairsMap"
         :key="datePairs.date.getTime()"
