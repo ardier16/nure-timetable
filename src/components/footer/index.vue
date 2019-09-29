@@ -1,11 +1,14 @@
 <template>
   <footer class="footer">
-    <div class="footer__logo-wrp">
+    <i18n-router-link
+      class="footer__logo-wrp"
+      :to="{ name: routeNames.landing }"
+    >
       <img
         class="footer__logo"
         src="@assets/img/logo-full.svg"
       >
-    </div>
+    </i18n-router-link>
 
     <p class="footer__copyright">
       {{ 'footer.copyright' | translate }}
@@ -18,11 +21,17 @@
 <script>
 import SocialNetworks from './components/social-networks'
 
+import { routeNames } from '@router/routes'
+
 export default {
   name: 'app-footer',
   components: {
     SocialNetworks,
   },
+
+  data: () => ({
+    routeNames,
+  }),
 }
 </script>
 

@@ -8,6 +8,7 @@
       v-model="form.group"
       class="search-form__input"
       type="text"
+      name="group-name"
       :placeholder="'landing.search-placeholder' | translate"
     />
 
