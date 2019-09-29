@@ -74,13 +74,13 @@ $x-large: 1920px;
   }
 
   &::-webkit-scrollbar {
-    background-color: $color-light;
+    background-color: $color-app-bg;
     width: 2px;
     height: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $color-dark;
+    background-color: $color-primary;
   }
 }
 

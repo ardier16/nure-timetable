@@ -1,9 +1,11 @@
 <template>
   <header class="header">
-    <img
-      class="header__logo"
-      src="@assets/img/logo-full.svg"
-    >
+    <i18n-router-link :to="{ name: routeNames.landing }">
+      <img
+        class="header__logo"
+        src="@assets/img/logo-full.svg"
+      >
+    </i18n-router-link>
 
     <locale-picker />
   </header>
@@ -12,11 +14,17 @@
 <script>
 import LocalePicker from './components/locale-picker'
 
+import { routeNames } from '@router/routes'
+
 export default {
   name: 'app-header',
   components: {
     LocalePicker,
   },
+
+  data: () => ({
+    routeNames,
+  }),
 }
 </script>
 

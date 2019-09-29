@@ -46,9 +46,10 @@ export default {
 
 <style lang="scss" scoped>
 .pair-card {
-  padding: 1.6rem;
+  padding: 1.2rem;
   border: 0.1rem solid $color-primary;
   width: 12rem;
+  height: 9rem;
   border-radius: 1rem;
   transition: all 200ms ease-in;
   cursor: pointer;

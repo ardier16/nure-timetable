@@ -14,15 +14,26 @@ export const mutations = {
 
 export const actions = {
   async [types.LOAD_TIMETABLE] ({ commit }, group) {
-    const pairs = await api().get({
-      endpoint: 'timetable',
-      query: {
-        group,
-        include: ['groups', 'subject', 'teachers'],
-      },
-    })
+    commit(types.SET_PAIRS, [])
 
-    commit(types.SET_PAIRS, pairs)
+    try {
+      const pairs = await api().get({
+        endpoint: '/timetable',
+        query: {
+          group,
+          include: ['groups', 'subject', 'teachers'],
+        },
+      })
+
+      // HACK: temporarily back-end does not return 400 code
+      if (!Array.isArray(pairs)) {
+        throw new Error()
+      }
+
+      commit(types.SET_PAIRS, pairs)
+    } catch {
+      commit(types.SET_PAIRS, [])
+    }
   },
 }
 

@@ -7,7 +7,8 @@ import './devtools'
 import { initI18n } from './i18n'
 import { initApi } from './api'
 
-import translate from '@utils/translate'
+import { translate } from '@utils/translate'
+import { formatDate } from '@utils/format-date'
 
 import App from './components/app'
 import I18nRouterLink from './router/i18n-router-link'
@@ -30,6 +31,7 @@ async function init () {
   Vue.use(VueHead)
 
   Vue.filter('translate', translate)
+  Vue.filter('formatDate', formatDate)
 
   new Vue({
     router: require('@router').default,

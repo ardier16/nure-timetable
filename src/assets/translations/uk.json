@@ -1,8 +1,4 @@
 {
-  "header": {
-    "title": "NURE розклад"
-  },
-
   "locales": {
     "eng": "Eng",
     "rus": "Рус",
@@ -11,5 +7,20 @@
 
   "footer": {
     "copyright": "Автор: @ardier16"
+  },
+
+  "landing": {
+    "search-placeholder": "Уведіть назву групи, напр. ІПЗм-19-3",
+    "search-btn": "Пошук"
+  },
+
+  "pair-types-short": {
+    "lecture": "ЛК",
+    "practice": "ПЗ",
+    "lab": "ЛБ",
+    "consultation": "КОНС",
+    "test": "ЗАЛ",
+    "exam": "ЕКЗ",
+    "course-work": "КП"
   }
 }

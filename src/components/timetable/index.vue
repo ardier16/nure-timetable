@@ -1,18 +1,16 @@
 <template>
   <div class="timetable">
-    <div class="timetable__pairs">
-      <pair-card
-        v-for="(pair, i) in filteredPairs"
-        :key="i"
-        :pair="pair"
-        class="timetable__pair"
-      />
+    <div
+      v-if="pairs.length"
+      class="timetable__pairs"
+    >
+      <pairs-table :pairs="pairs" />
     </div>
   </div>
 </template>
 
 <script>
-import PairCard from '@common/components/pair-card'
+import PairsTable from './components/pairs-table'
 
 import { mapActions, mapGetters } from 'vuex'
 import { types } from '@store/types'
@@ -20,19 +18,13 @@ import { types } from '@store/types'
 export default {
   name: 'timetable',
   components: {
-    PairCard,
+    PairsTable,
   },
 
   computed: {
     ...mapGetters({
       pairs: types.pairs,
     }),
-
-    filteredPairs () {
-      return this.pairs.slice(0).sort((a, b) => {
-        return a.startDate.getTime() - b.startDate.getTime()
-      })
-    },
   },
 
   async created () {
@@ -51,13 +43,19 @@ export default {
 .timetable {
   @include container;
 
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-  &__pairs {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -1rem;
+  &__date-pairs {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    &-pairs {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -1rem;
+    }
   }
 
   &__pair {
