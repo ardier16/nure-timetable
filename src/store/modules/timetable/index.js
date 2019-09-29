@@ -32,7 +32,6 @@ export const actions = {
 
       commit(types.SET_PERIODS, periods)
     } catch (e) {
-      alert(e)
       commit(types.SET_PERIODS, [])
     }
   },

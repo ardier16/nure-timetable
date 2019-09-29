@@ -34,19 +34,19 @@ export default {
   &__line {
     @extend %skeleton-bg;
 
-    width: 10rem;
+    width: 8rem;
     border-radius: 1rem;
-    padding: 0.6rem 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6rem;
-    padding: 2.4rem 1rem;
+    height: 5rem;
+    padding: 2rem 1rem;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border: 0.1rem solid $color-secondary;
     border-right: none;
     border-top: none;

@@ -78,7 +78,7 @@ export default {
 
     isOpen: {
       type: Boolean,
-      default: false,
+      required: true,
     },
 
     closeOnClickBackdrop: {
@@ -127,12 +127,18 @@ export default {
     isOpen (value) {
       if (value) {
         BodyScrollPreventer.on()
-        this.attachResizeListener()
       } else {
         BodyScrollPreventer.off()
-        this.detachResizeListener()
       }
     },
+  },
+
+  mounted () {
+    this.attachResizeListener()
+  },
+
+  beforeDestroy () {
+    this.detachResizeListener()
   },
 
   methods: {

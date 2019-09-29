@@ -17,6 +17,7 @@ import store from '@store'
 import { config } from '@/config'
 
 import '../node_modules/@mdi/font/css/materialdesignicons.min.css'
+import './registerServiceWorker'
 
 async function init () {
   initI18n(store)

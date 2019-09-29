@@ -71,10 +71,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6rem;
-    padding: 2.4rem 1rem;
+    height: 5rem;
+    padding: 2rem 1rem;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border: 0.1rem solid $color-secondary;
     border-right: none;
     border-top: none;
