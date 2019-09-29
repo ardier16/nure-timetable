@@ -6,15 +6,29 @@
       <periods-column
         v-for="datePeriods in periodsMap"
         :key="datePeriods.date.getTime()"
+        class="periods-table__column"
         :date="datePeriods.date"
         :periods="datePeriods.periods"
-        class="periods-table__column"
+        @period-selected="selectPeriod"
       />
     </div>
+
+    <ui-modal
+      :is-open.sync="isDetailsModalShown"
+      mode-xs="bottom"
+    >
+      <period-details
+        v-if="selectedPeriod"
+        :period="selectedPeriod"
+      />
+    </ui-modal>
   </div>
 </template>
 
 <script>
+import UiModal from '@components/ui/ui-modal'
+import PeriodDetails from '@common/components/period-details'
+
 import PeriodsColumn from './periods-column'
 import TimetableLegend from './timetable-legend'
 
@@ -23,6 +37,8 @@ import { DateUtil } from '@utils/date.util'
 export default {
   name: 'periods-table',
   components: {
+    UiModal,
+    PeriodDetails,
     PeriodsColumn,
     TimetableLegend,
   },
@@ -30,6 +46,11 @@ export default {
   props: {
     periods: { type: Array, required: true },
   },
+
+  data: () => ({
+    selectedPeriod: null,
+    isDetailsModalShown: false,
+  }),
 
   computed: {
     filteredPeriods () {
@@ -65,6 +86,13 @@ export default {
       y: false,
     }
     this.$scrollTo('.periods-column--present', -1, options)
+  },
+
+  methods: {
+    selectPeriod (period) {
+      this.selectedPeriod = period
+      this.isDetailsModalShown = true
+    },
   },
 }
 </script>

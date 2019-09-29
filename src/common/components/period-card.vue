@@ -5,6 +5,7 @@
       `period-card--${period.type}`,
       period.isLast && 'period-card--last'
     ]"
+    @click="$emit(events.click)"
   >
     <p class="period-card__title">
       {{ period.subject.shortName }}
@@ -35,12 +36,20 @@
 <script>
 import { Period } from '@records/period'
 
+const events = {
+  click: 'click',
+}
+
 export default {
   name: 'period-card',
 
   props: {
     period: { type: Period, required: true },
   },
+
+  data: () => ({
+    events,
+  }),
 }
 </script>
 

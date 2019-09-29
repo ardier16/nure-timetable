@@ -3,14 +3,19 @@
     <period-card
       v-for="(period, i) in periods"
       :key="i"
-      :period="period"
       class="periods-cell__period"
+      :period="period"
+      @click="$emit(events.periodSelected, period)"
     />
   </div>
 </template>
 
 <script>
 import PeriodCard from '@common/components/period-card'
+
+const events = {
+  periodSelected: 'period-selected',
+}
 
 export default {
   name: 'periods-cell',
@@ -21,6 +26,10 @@ export default {
   props: {
     periods: { type: Array, required: true },
   },
+
+  data: () => ({
+    events,
+  }),
 }
 </script>
 

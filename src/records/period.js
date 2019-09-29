@@ -16,7 +16,7 @@ export class Period {
       shortName: _get(record, 'subject.shortName'),
     }
 
-    this.groups = record.groups.map(g => g.name)
+    this.groups = record.groups.map(g => g.name).sort()
     this.teacher = {
       name: _get(record, 'teachers[0].name', ''),
       shortName: _get(record, 'teachers[0].shortName', ''),

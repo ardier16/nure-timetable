@@ -71,44 +71,26 @@ export default {
   mixins: [ResizeListenerMixin],
 
   props: {
-    /** Should the auto-generated close button appear. bottomDrawer does not
-     * support the prop. Click emits 'close'
-     */
     showCloseButton: {
       type: Boolean,
       default: true,
     },
 
-    /** Should the auto-generated close button appear. bottomDrawer does not
-     * support the prop. Click emits 'close'
-     */
     isOpen: {
       type: Boolean,
       default: false,
     },
 
-    /**
-     * Should the modal emit 'close' on click on backdrop
-     */
     closeOnClickBackdrop: {
       type: Boolean,
       default: true,
     },
 
-    /**
-     * The view of the modal.
-     * Values: 'bottom', 'drawerLeft', 'drawerRight'.
-     * Any other provided values render 'default' mode.
-     */
     mode: {
       type: String,
       default: modes.default,
     },
 
-    /**
-     * The same as the `mode` prop but applies under XS breakpoint only
-     * (currently hard-coded to 600px and cannot be overwritten)
-     */
     modeXs: {
       type: String,
       default: modes.default,
@@ -141,14 +123,16 @@ export default {
     },
   },
 
-  mounted () {
-    BodyScrollPreventer.on()
-    this.attachResizeListener()
-  },
-
-  destroyed () {
-    BodyScrollPreventer.off()
-    this.detachResizeListener()
+  watch: {
+    isOpen (value) {
+      if (value) {
+        BodyScrollPreventer.on()
+        this.attachResizeListener()
+      } else {
+        BodyScrollPreventer.off()
+        this.detachResizeListener()
+      }
+    },
   },
 
   methods: {
@@ -239,7 +223,7 @@ $thumb-h: 2.5rem;
       position: relative;
       min-width: 10rem;
       min-height: 10rem;
-      padding: 6rem;
+      padding: 4rem;
       border-radius: 1rem;
     }
 
@@ -276,8 +260,8 @@ $thumb-h: 2.5rem;
 
   &__close-btn {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 1.6rem;
+    right: 1.6rem;
     border: none;
     display: flex;
     align-items: center;
@@ -309,7 +293,7 @@ $thumb-h: 2.5rem;
 
     &--bottom {
       max-height: calc(75vh - #{$thumb-h});
-      padding: 2rem 0;
+      padding: 2rem;
       -webkit-overflow-scrolling: touch;
     }
   }

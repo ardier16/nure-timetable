@@ -17,8 +17,9 @@
     <periods-cell
       v-for="number of Object.keys(periodTimes)"
       :key="number"
-      :periods="periods.filter(p => p.number === number)"
       class="periods-column__cell"
+      :periods="periods.filter(p => p.number === number)"
+      @period-selected="$emit(events.periodSelected, $event)"
     />
   </div>
 </template>
@@ -28,6 +29,10 @@ import PeriodsCell from './periods-cell'
 
 import { periodTimes } from '@constants/period-times'
 import { DateUtil } from '@utils/date.util'
+
+const events = {
+  periodSelected: 'period-selected',
+}
 
 export default {
   name: 'periods-column',
@@ -42,6 +47,7 @@ export default {
 
   data: () => ({
     periodTimes,
+    events,
   }),
 
   computed: {
