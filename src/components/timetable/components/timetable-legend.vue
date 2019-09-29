@@ -41,7 +41,7 @@ export default {
   width: 6rem;
 
   &__header {
-    height: 6rem;
+    height: 5rem;
     border-bottom: 0.1rem solid $color-secondary;
   }
 
