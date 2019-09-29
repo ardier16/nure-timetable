@@ -78,7 +78,7 @@ export default {
   }
 
   &__pairs {
-    width: calc(100% - 4rem);
+    width: calc(100% - 6rem);
     display: flex;
     overflow-x: scroll;
 

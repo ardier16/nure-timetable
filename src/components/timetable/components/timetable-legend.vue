@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .timetable-legend {
-  width: 4rem;
+  width: 6rem;
 
   &__header {
     height: 6rem;

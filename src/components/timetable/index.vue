@@ -1,13 +1,12 @@
 <template>
   <div class="timetable">
-    <timetable-skeleton />
-
-    <div
-      v-if="pairs.length"
-      class="timetable__pairs"
-    >
+    <template v-if="isLoaded && pairs.length">
       <pairs-table :pairs="pairs" />
-    </div>
+    </template>
+
+    <template v-else-if="!isLoaded">
+      <timetable-skeleton />
+    </template>
   </div>
 </template>
 
@@ -25,6 +24,10 @@ export default {
     PairsTable,
   },
 
+  data: () => ({
+    isLoaded: false,
+  }),
+
   computed: {
     ...mapGetters({
       pairs: types.pairs,
@@ -33,6 +36,7 @@ export default {
 
   async created () {
     await this.loadTimetable(this.$route.query.group)
+    this.isLoaded = true
   },
 
   methods: {
@@ -52,22 +56,6 @@ export default {
 
   @include respond-to(small) {
     padding: 0;
-  }
-
-  &__date-pairs {
-    &:not(:first-child) {
-      margin-top: 2rem;
-    }
-
-    &-pairs {
-      display: flex;
-      flex-wrap: wrap;
-      margin: -1rem;
-    }
-  }
-
-  &__pair {
-    margin: 1rem;
   }
 }
 </style>
