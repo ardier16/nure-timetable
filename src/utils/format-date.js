@@ -5,6 +5,7 @@ export function formatDate (date) {
   const dateFormatter = new Intl.DateTimeFormat(locale, {
     month: 'short',
     day: 'numeric',
+    weekday: 'short',
   })
 
   return dateFormatter.format(date)

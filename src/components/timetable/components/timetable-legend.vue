@@ -7,9 +7,11 @@
     <p
       v-for="number of Object.values(pairStartTimes)"
       :key="number"
-      class="timetable-legend__pair-number"
+      class="timetable-legend__pair-number-wrp"
     >
-      {{ number }}
+      <span class="timetable-legend__pair-number">
+        {{ number }}
+      </span>
     </p>
   </div>
 </template>
@@ -28,24 +30,32 @@ export default {
 
 <style lang="scss" scoped>
 .timetable-legend {
-  border: 0.1rem solid $color-secondary;
   width: 4rem;
 
   &__header {
-    height: 4rem;
-    background-color: $color-primary;
+    height: 6rem;
+    border-bottom: 0.1rem solid $color-secondary;
   }
 
-  &__pair-number {
-    height: 12rem;
+  &__pair-number-wrp {
+    height: 11rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $color-primary;
-    color: $color-text-inverse;
     font-weight: 700;
     font-size: 2rem;
-    border-top: 0.1rem solid $color-secondary;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $color-secondary;
+    }
+  }
+
+  &__pair-number {
+    background-color: $color-primary;
+    color: $color-text-inverse;
+    padding: 1.2rem;
+    line-height: 1rem;
+    border-radius: 50%;
   }
 }
 </style>

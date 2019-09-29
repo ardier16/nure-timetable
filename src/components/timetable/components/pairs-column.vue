@@ -1,7 +1,12 @@
 <template>
-  <div class="pairs-column">
+  <div
+    class="pairs-column"
+    :class="{ 'pairs-column--last': date.getTime() < Date.now() }"
+  >
     <p class="pairs-column__header">
-      {{ date | formatDate }}
+      <span class="pairs-column__date">
+        {{ date | formatDate }}
+      </span>
     </p>
 
     <pairs-cell
@@ -37,18 +42,30 @@ export default {
 
 <style lang="scss" scoped>
 .pairs-column {
-  border: 0.1rem solid $color-secondary;
   width: 14rem;
+
+  &--last {
+    background-color: rgba($color-primary, 0.15);
+  }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4rem;
-    background-color: $color-primary;
-    color: $color-text-inverse;
+    height: 6rem;
+    padding: 2.4rem 1rem;
     font-weight: 700;
     font-size: 1.6rem;
+    border: 0.1rem solid $color-secondary;
+    border-left: none;
+    border-top: none;
+  }
+
+  &__date {
+    background-color: $color-primary;
+    color: $color-text-inverse;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
   }
 }
 </style>

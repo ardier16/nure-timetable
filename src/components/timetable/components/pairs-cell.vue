@@ -27,9 +27,14 @@ export default {
 <style lang="scss" scoped>
 .pairs-cell {
   width: 14rem;
-  height: 12rem;
+  height: 11rem;
   padding: 1rem;
   border: 0.1rem solid $color-secondary;
   border-left: none;
+  border-top: none;
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 </style>

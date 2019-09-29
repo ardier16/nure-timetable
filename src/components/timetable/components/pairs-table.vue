@@ -57,13 +57,15 @@ export default {
   display: flex;
 
   &__legend {
-    width: 4rem;
+    width: 6rem;
   }
 
   &__pairs {
     width: calc(100% - 4rem);
     display: flex;
     overflow-x: scroll;
+
+    @include scrollbar;
   }
 }
 </style>
