@@ -5,17 +5,18 @@
   "description": "NURE timetable client",
   "author": "Maksym Shopynskyi <ardier16@gmail.com>",
   "scripts": {
-    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-prod": "NODE_ENV=production yarn build --mode prod",
     "lint": "eslint src --ext .js,.vue --cache",
-    "lint-fix": "eslint src --ext .js,.vue --cache --fix"
+    "build-prod": "NODE_ENV=production yarn build --mode prod",
+    "lint-fix": "eslint src --ext .js,.vue --cache --fix",
+    "start": "vue-cli-service serve"
   },
   "dependencies": {
     "@mdi/font": "^4.4.95",
     "axios": "^0.19.0",
     "jsona": "^1.5.0",
     "lodash": "^4.17.15",
+    "register-service-worker": "^1.6.2",
     "urijs": "^1.19.1",
     "vue": "^2.5.17",
     "vue-head": "^2.1.1",
@@ -30,6 +31,7 @@
     "@babel/plugin-proposal-unicode-property-regex": "^7.0.0",
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-plugin-pwa": "^3.11.0",
     "@vue/cli-service": "^3.0.3",
     "@vue/eslint-config-standard": "^3.0.4",
     "babel-eslint": "^10.0.1",

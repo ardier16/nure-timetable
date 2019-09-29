@@ -47,6 +47,11 @@ module.exports = {
     },
   },
 
+  pwa: {
+    themeColor: '#343434',
+    msTileColor: '#ffffff',
+  },
+
   chainWebpack: config => {
     config.module
       .rule('scss')
