@@ -49,6 +49,7 @@ export default {
   padding: 1.6rem;
   border: 0.1rem solid $color-primary;
   width: 12rem;
+  height: 10rem;
   border-radius: 1rem;
   transition: all 200ms ease-in;
   cursor: pointer;

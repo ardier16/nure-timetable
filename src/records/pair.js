@@ -1,6 +1,7 @@
 import _get from 'lodash/get'
 
 import { pairTypes } from '@constants/pair-types'
+import { pairStartTimes } from '@constants/pair-start-times'
 
 export class Pair {
   constructor (record) {
@@ -24,5 +25,13 @@ export class Pair {
 
   get isLast () {
     return this.startDate.getTime() < Date.now()
+  }
+
+  get number () {
+    const hours = this.startDate.getHours()
+    const minutes = this.startDate.getMinutes()
+    const time = [hours, minutes].join(':')
+
+    return pairStartTimes[time]
   }
 }

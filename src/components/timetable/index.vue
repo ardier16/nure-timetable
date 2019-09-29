@@ -2,64 +2,29 @@
   <div class="timetable">
     <div
       v-if="pairs.length"
-      class="timetable__pairs">
-      <div
-        v-for="datePairs in pairsMap"
-        :key="datePairs.date.getTime()"
-        class="timetable__date-pairs"
-      >
-        <p class="timetable__date-pairs-date">
-          {{ datePairs.date.toLocaleDateString() }}
-        </p>
-
-        <div class="timetable__date-pairs-pairs">
-          <pair-card
-            v-for="(pair, i) in datePairs.pairs"
-            :key="i"
-            :pair="pair"
-            class="timetable__pair"
-          />
-        </div>
-      </div>
+      class="timetable__pairs"
+    >
+      <pairs-table :pairs="pairs" />
     </div>
   </div>
 </template>
 
 <script>
-import PairCard from '@common/components/pair-card'
+import PairsTable from './components/pairs-table'
 
 import { mapActions, mapGetters } from 'vuex'
 import { types } from '@store/types'
 
-import { DateUtil } from '@utils/date.util'
-
 export default {
   name: 'timetable',
   components: {
-    PairCard,
+    PairsTable,
   },
 
   computed: {
     ...mapGetters({
       pairs: types.pairs,
     }),
-
-    pairDates () {
-      const pairDates = this.pairs.map(p => p.startDate.getTime())
-      const startDate = new Date(Math.min(...pairDates))
-      const endDate = new Date(Math.max(...pairDates))
-
-      return DateUtil.getDatesArray(startDate, endDate)
-    },
-
-    pairsMap () {
-      return this.pairDates.map(date => ({
-        date,
-        pairs: this.pairs.filter(p => {
-          return p.startDate.toLocaleDateString() === date.toLocaleDateString()
-        }),
-      }))
-    },
   },
 
   async created () {
