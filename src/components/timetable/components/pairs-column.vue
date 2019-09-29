@@ -1,36 +1,54 @@
 <template>
-  <div class="pairs-table">
-    <p class="timetable__date-pairs-date">
-      {{ date.toLocaleDateString() }}
+  <div class="pairs-column">
+    <p class="pairs-column__header">
+      {{ date | formatDate }}
     </p>
 
-    <p class="timetable__date-pairs-pairs">
-      <pair-card
-        v-for="(pair, i) in pairs"
-        :key="i"
-        :pair="pair"
-        class="timetable__pair"
-      />
-    </p>
+    <pairs-cell
+      v-for="number of Object.values(pairStartTimes)"
+      :key="number"
+      :pairs="pairs.filter(p => p.number === number)"
+      class="pair-column__cell"
+    />
   </div>
 </template>
 
 <script>
-import PairCard from '@common/components/pair-card'
+import PairsCell from './pairs-cell'
+
+import { pairStartTimes } from '@constants/pair-start-times'
 
 export default {
   name: 'pairs-column',
   components: {
-    PairCard,
+    PairsCell,
   },
 
   props: {
     date: { type: Date, required: true },
     pairs: { type: Array, required: true },
   },
+
+  data: () => ({
+    pairStartTimes,
+  }),
 }
 </script>
 
 <style lang="scss" scoped>
+.pairs-column {
+  border: 0.1rem solid $color-secondary;
+  width: 14rem;
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    background-color: $color-primary;
+    color: $color-text-inverse;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+}
 </style>

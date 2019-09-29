@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .timetable-legend {
-  border: 0.1rem solid $color-primary;
+  border: 0.1rem solid $color-secondary;
   width: 4rem;
 
   &__header {

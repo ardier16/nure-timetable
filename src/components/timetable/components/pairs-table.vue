@@ -1,14 +1,16 @@
 <template>
   <div class="pairs-table">
-    <timetable-legend />
+    <timetable-legend class="pairs-table__legend" />
 
-    <pairs-column
-      v-for="datePairs in pairsMap"
-      :key="datePairs.date.getTime()"
-      :date="datePairs.date"
-      :pairs="datePairs.pairs"
-      class="timetable__date-pairs"
-    />
+    <div class="pairs-table__pairs">
+      <pairs-column
+        v-for="datePairs in pairsMap"
+        :key="datePairs.date.getTime()"
+        :date="datePairs.date"
+        :pairs="datePairs.pairs"
+        class="pairs-table__column"
+      />
+    </div>
   </div>
 </template>
 
@@ -51,5 +53,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pairs-table {
+  display: flex;
 
+  &__legend {
+    width: 4rem;
+  }
+
+  &__pairs {
+    width: calc(100% - 4rem);
+    display: flex;
+    overflow-x: scroll;
+  }
+}
 </style>
