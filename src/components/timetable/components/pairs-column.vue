@@ -1,11 +1,15 @@
 <template>
   <div
     class="pairs-column"
-    :class="isDayLast
-      ? 'pairs-column--last' : 'pairs-column--present'"
+    :class="[
+      isDayLast ? 'pairs-column--last' : 'pairs-column--present',
+    ]"
   >
     <p class="pairs-column__header">
-      <span class="pairs-column__date">
+      <span
+        class="pairs-column__date"
+        :class="!pairs.length && 'pairs-column__date--off'"
+      >
         {{ date | formatDate }}
       </span>
     </p>
@@ -53,6 +57,10 @@ export default {
 .pairs-column {
   width: 14rem;
 
+  &--on {
+    background-color: rgba(orange, 0.15);
+  }
+
   &--last {
     background-color: rgba($color-primary, 0.15);
   }
@@ -75,6 +83,10 @@ export default {
     color: $color-text-inverse;
     padding: 0.6rem 1rem;
     border-radius: 1rem;
+
+    &--off {
+      background-color: $color-parakeet-dark;
+    }
   }
 }
 </style>

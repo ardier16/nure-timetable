@@ -32,8 +32,12 @@ export default {
   },
 
   computed: {
+    filteredPairs () {
+      return this.pairs
+    },
+
     pairDates () {
-      const pairDates = this.pairs.map(p => p.startDate.getTime())
+      const pairDates = this.filteredPairs.map(p => p.startDate.getTime())
       const startDate = new Date(Math.min(...pairDates))
       const endDate = new Date(Math.max(...pairDates))
 
@@ -43,7 +47,7 @@ export default {
     pairsMap () {
       return this.pairDates.map(date => ({
         date,
-        pairs: this.pairs.filter(p => {
+        pairs: this.filteredPairs.filter(p => {
           return p.startDate.toLocaleDateString() === date.toLocaleDateString()
         }),
       }))

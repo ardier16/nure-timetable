@@ -9,7 +9,7 @@
       :key="number"
       class="timetable-legend__pair"
     >
-      <p class="timetable-legend__pair-start">
+      <p class="timetable-legend__pair-date">
         {{ times.start }}
       </p>
 
@@ -17,7 +17,7 @@
         {{ number }}
       </p>
 
-      <p class="timetable-legend__pair-end">
+      <p class="timetable-legend__pair-date">
         {{ times.end }}
       </p>
     </div>
@@ -65,6 +65,10 @@ export default {
       border-radius: 50%;
       font-weight: 700;
       font-size: 2rem;
+    }
+
+    &-date {
+      font-weight: 500;
     }
   }
 }
