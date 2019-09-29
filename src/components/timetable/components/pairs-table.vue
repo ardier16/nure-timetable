@@ -2,7 +2,7 @@
   <div class="pairs-table">
     <timetable-legend class="pairs-table__legend" />
 
-    <div class="pairs-table__pairs">
+    <div id="kek" class="pairs-table__pairs">
       <pairs-column
         v-for="datePairs in pairsMap"
         :key="datePairs.date.getTime()"
@@ -48,6 +48,19 @@ export default {
         }),
       }))
     },
+  },
+
+  mounted () {
+    const options = {
+      container: '.pairs-table__pairs',
+      easing: 'linear',
+      offset: 1,
+      force: true,
+      cancelable: true,
+      x: true,
+      y: false,
+    }
+    this.$scrollTo('.pairs-column--present', -1, options)
   },
 }
 </script>

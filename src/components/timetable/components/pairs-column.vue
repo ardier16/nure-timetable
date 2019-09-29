@@ -1,7 +1,8 @@
 <template>
   <div
     class="pairs-column"
-    :class="{ 'pairs-column--last': date.getTime() < Date.now() }"
+    :class="isDayLast
+      ? 'pairs-column--last' : 'pairs-column--present'"
   >
     <p class="pairs-column__header">
       <span class="pairs-column__date">
@@ -22,6 +23,7 @@
 import PairsCell from './pairs-cell'
 
 import { pairStartTimes } from '@constants/pair-start-times'
+import { DateUtil } from '@utils/date.util'
 
 export default {
   name: 'pairs-column',
@@ -37,6 +39,13 @@ export default {
   data: () => ({
     pairStartTimes,
   }),
+
+  computed: {
+    isDayLast () {
+      return DateUtil.getStartTimestamp(this.date) <
+        DateUtil.getStartTimestamp(Date.now())
+    },
+  },
 }
 </script>
 

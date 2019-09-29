@@ -17,4 +17,11 @@ export class DateUtil {
 
     return result
   }
+
+  static getStartTimestamp (date) {
+    const resultDate = new Date(date)
+    resultDate.setHours(0, 0, 0, 0)
+
+    return resultDate.getTime()
+  }
 }
