@@ -1,5 +1,7 @@
 <template>
   <div class="timetable">
+    <timetable-skeleton />
+
     <div
       v-if="pairs.length"
       class="timetable__pairs"
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import TimetableSkeleton from './components/timetable-skeleton'
 import PairsTable from './components/pairs-table'
 
 import { mapActions, mapGetters } from 'vuex'
@@ -18,6 +21,7 @@ import { types } from '@store/types'
 export default {
   name: 'timetable',
   components: {
+    TimetableSkeleton,
     PairsTable,
   },
 
@@ -45,6 +49,10 @@ export default {
 
   padding-top: 1rem;
   padding-bottom: 1rem;
+
+  @include respond-to(small) {
+    padding: 0;
+  }
 
   &__date-pairs {
     &:not(:first-child) {

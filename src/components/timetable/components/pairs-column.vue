@@ -57,10 +57,6 @@ export default {
 .pairs-column {
   width: 14rem;
 
-  &--on {
-    background-color: rgba(orange, 0.15);
-  }
-
   &--last {
     background-color: rgba($color-primary, 0.15);
   }
