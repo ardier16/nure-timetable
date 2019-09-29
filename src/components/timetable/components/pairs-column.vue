@@ -18,7 +18,7 @@
       v-for="number of Object.keys(pairTimes)"
       :key="number"
       :pairs="pairs.filter(p => p.number === number)"
-      class="pair-column__cell"
+      class="pairs-column__cell"
     />
   </div>
 </template>
@@ -57,10 +57,6 @@ export default {
 .pairs-column {
   width: 14rem;
 
-  &--on {
-    background-color: rgba(orange, 0.15);
-  }
-
   &--last {
     background-color: rgba($color-primary, 0.15);
   }
@@ -74,7 +70,7 @@ export default {
     font-weight: 700;
     font-size: 1.6rem;
     border: 0.1rem solid $color-secondary;
-    border-left: none;
+    border-right: none;
     border-top: none;
   }
 

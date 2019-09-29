@@ -1,11 +1,16 @@
-%placeholder-bg {
+%skeleton-bg {
   animation-duration: 2.4s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: shimmer;
   animation-timing-function: linear;
-  background: #ebeef4;
-  background: linear-gradient(to right, #ebeef4 4%, #e5e8ee 25%, #ebeef4 36%);
+  background: $color-skeleton;
+  background: linear-gradient(
+    to right,
+    $color-skeleton 4%,
+    $color-skeleton-dark 25%,
+    $color-skeleton 36%
+  );
   background-attachment: fixed;
   background-size: 100vw 100%;
 }

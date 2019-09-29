@@ -30,7 +30,7 @@ export default {
   height: 11rem;
   padding: 1rem;
   border: 0.1rem solid $color-secondary;
-  border-left: none;
+  border-right: none;
   border-top: none;
 
   &:last-child {
