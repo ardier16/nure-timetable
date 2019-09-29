@@ -1,4 +1,4 @@
-export const pairTypes = {
+export const periodTypes = {
   0: 'lecture',
   1: 'lecture',
   2: 'lecture',

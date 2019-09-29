@@ -27,8 +27,8 @@ $color-app-bg: $color-white;
 $color-skeleton: #ebeef4;
 $color-skeleton-dark: #e5e8ee;
 
-// Pair colors
-$pair-primary-colors: (
+// Period colors
+$period-primary-colors: (
   'lecture': $color-canary,
   'lab': $color-orchid,
   'practice': $color-parakeet,
@@ -38,7 +38,7 @@ $pair-primary-colors: (
   'course-work': $color-parakeet
 );
 
-$pair-light-colors: (
+$period-light-colors: (
   'lecture': $color-canary-light,
   'lab': $color-orchid-light,
   'practice': $color-parakeet-light,
@@ -48,7 +48,7 @@ $pair-light-colors: (
   'course-work': $color-parakeet-light
 );
 
-$pair-dark-colors: (
+$period-dark-colors: (
   'lecture': $color-canary-dark,
   'lab': $color-orchid-dark,
   'practice': $color-parakeet-dark,

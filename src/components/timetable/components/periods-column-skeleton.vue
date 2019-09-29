@@ -1,34 +1,34 @@
 <template>
-  <div class="pairs-column-skeleton">
-    <p class="pairs-column-skeleton__header">
-      <span class="pairs-column-skeleton__line">
+  <div class="periods-column-skeleton">
+    <p class="periods-column-skeleton__header">
+      <span class="periods-column-skeleton__line">
         &nbsp;
       </span>
     </p>
 
     <div
-      class="pairs-column-skeleton__cell"
+      class="periods-column-skeleton__cell"
       v-for="i of 6"
       :key="i"
     >
-      <pair-card-skeleton v-if="Math.round(Math.random())" />
+      <period-card-skeleton v-if="Math.round(Math.random())" />
     </div>
   </div>
 </template>
 
 <script>
-import PairCardSkeleton from '@common/components/pair-card-skeleton'
+import PeriodCardSkeleton from '@common/components/period-card-skeleton'
 
 export default {
-  name: 'pairs-column-skeleton',
+  name: 'periods-column-skeleton',
   components: {
-    PairCardSkeleton,
+    PeriodCardSkeleton,
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.pairs-column-skeleton {
+.periods-column-skeleton {
   width: 14rem;
 
   &__line {

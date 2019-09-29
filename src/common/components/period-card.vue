@@ -1,51 +1,51 @@
 <template>
   <div
-    class="pair-card"
+    class="period-card"
     :class="[
-      `pair-card--${pair.type}`,
-      pair.isLast && 'pair-card--last'
+      `period-card--${period.type}`,
+      period.isLast && 'period-card--last'
     ]"
   >
-    <p class="pair-card__title">
-      {{ pair.subject.shortName }}
+    <p class="period-card__title">
+      {{ period.subject.shortName }}
     </p>
 
-    <p class="pair-card__type">
+    <p class="period-card__type">
       <span
-        class="pair-card__type-icon"
-        :class="`pair-card__type-icon--${pair.type}`"
+        class="period-card__type-icon"
+        :class="`period-card__type-icon--${period.type}`"
       >
       &nbsp;
       </span>
 
-      <span class="pair-card__type-text">
-        {{ `pair-types-short.${pair.type}` | translate }}
+      <span class="period-card__type-text">
+        {{ `period-types-short.${period.type}` | translate }}
       </span>
     </p>
 
-    <p class="pair-card__location">
-      <i class="mdi mdi-map-marker-outline pair-card__location-icon" />
-      <span class="pair-card__location-text">
-        {{ pair.auditory }}
+    <p class="period-card__location">
+      <i class="mdi mdi-map-marker-outline period-card__location-icon" />
+      <span class="period-card__location-text">
+        {{ period.auditory }}
       </span>
     </p>
   </div>
 </template>
 
 <script>
-import { Pair } from '@records/pair'
+import { Period } from '@records/period'
 
 export default {
-  name: 'pair-card',
+  name: 'period-card',
 
   props: {
-    pair: { type: Pair, required: true },
+    period: { type: Period, required: true },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.pair-card {
+.period-card {
   padding: 1.2rem;
   border: 0.1rem solid $color-primary;
   width: 12rem;
@@ -56,24 +56,24 @@ export default {
 
   @include box-shadow;
 
-  @each $type, $color in $pair-dark-colors {
+  @each $type, $color in $period-dark-colors {
     &--#{$type} {
       border-color: $color;
     }
   }
 
-  @each $type, $color in $pair-light-colors {
-    &--#{$type}.pair-card--last {
+  @each $type, $color in $period-light-colors {
+    &--#{$type}.period-card--last {
       background-color: $color;
     }
   }
 
-  @each $type, $color in $pair-primary-colors {
+  @each $type, $color in $period-primary-colors {
     &--#{$type}:hover {
       background-color: $color;
 
-      .pair-card__type-icon--#{$type} {
-        background-color: map-get($pair-dark-colors, $type);
+      .period-card__type-icon--#{$type} {
+        background-color: map-get($period-dark-colors, $type);
       }
     }
   }
@@ -96,7 +96,7 @@ export default {
       border-radius: 50%;
       transition: all 200ms ease-in;
 
-      @each $type, $color in $pair-primary-colors {
+      @each $type, $color in $period-primary-colors {
         &--#{$type} {
           background-color: $color;
         }

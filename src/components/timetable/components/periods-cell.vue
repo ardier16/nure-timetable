@@ -1,31 +1,31 @@
 <template>
-  <div class="pairs-cell">
-    <pair-card
-      v-for="(pair, i) in pairs"
+  <div class="periods-cell">
+    <period-card
+      v-for="(period, i) in periods"
       :key="i"
-      :pair="pair"
-      class="pairs-cell__pair"
+      :period="period"
+      class="periods-cell__period"
     />
   </div>
 </template>
 
 <script>
-import PairCard from '@common/components/pair-card'
+import PeriodCard from '@common/components/period-card'
 
 export default {
-  name: 'pairs-cell',
+  name: 'periods-cell',
   components: {
-    PairCard,
+    PeriodCard,
   },
 
   props: {
-    pairs: { type: Array, required: true },
+    periods: { type: Array, required: true },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.pairs-cell {
+.periods-cell {
   width: 14rem;
   height: 11rem;
   padding: 1rem;

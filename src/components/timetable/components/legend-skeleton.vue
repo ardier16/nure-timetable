@@ -7,21 +7,21 @@
     <div
       v-for="i in 6"
       :key="i"
-      class="legend-skeleton__pair"
+      class="legend-skeleton__period"
     >
-      <p class="legend-skeleton__pair-date">
+      <p class="legend-skeleton__period-date">
         <span class="legend-skeleton__line">
           &nbsp;
         </span>
       </p>
 
-      <p class="legend-skeleton__pair-number">
+      <p class="legend-skeleton__period-number">
         <span class="legend-skeleton__line">
           &nbsp;
         </span>
       </p>
 
-      <p class="legend-skeleton__pair-date">
+      <p class="legend-skeleton__period-date">
         <span class="legend-skeleton__line">
           &nbsp;
         </span>
@@ -52,7 +52,7 @@ export default {
     border-bottom: 0.1rem solid $color-secondary;
   }
 
-  &__pair {
+  &__period {
     height: 11rem;
     padding: 1rem 0;
     display: flex;

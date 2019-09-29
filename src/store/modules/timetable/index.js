@@ -1,23 +1,23 @@
 import { types } from '@store/types'
 import { api } from '@/api'
-import { Pair } from '@records/pair'
+import { Period } from '@records/period'
 
 export const state = {
-  pairs: [],
+  periods: [],
 }
 
 export const mutations = {
-  [types.SET_PAIRS] (state, pairs) {
-    state.pairs = pairs
+  [types.SET_PERIODS] (state, periods) {
+    state.periods = periods
   },
 }
 
 export const actions = {
   async [types.LOAD_TIMETABLE] ({ commit }, group) {
-    commit(types.SET_PAIRS, [])
+    commit(types.SET_PERIODS, [])
 
     try {
-      const pairs = await api().get({
+      const periods = await api().get({
         endpoint: '/timetable',
         query: {
           group,
@@ -26,19 +26,19 @@ export const actions = {
       })
 
       // HACK: temporarily back-end does not return 400 code
-      if (!Array.isArray(pairs)) {
+      if (!Array.isArray(periods)) {
         throw new Error()
       }
 
-      commit(types.SET_PAIRS, pairs)
+      commit(types.SET_PERIODS, periods)
     } catch {
-      commit(types.SET_PAIRS, [])
+      commit(types.SET_PERIODS, [])
     }
   },
 }
 
 export const getters = {
-  [types.pairs]: state => state.pairs.map(p => new Pair(p)),
+  [types.periods]: state => state.periods.map(p => new Period(p)),
 }
 
 export default {

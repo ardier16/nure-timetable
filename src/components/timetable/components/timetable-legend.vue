@@ -5,19 +5,19 @@
     </p>
 
     <div
-      v-for="[number, times] of Object.entries(pairTimes)"
+      v-for="[number, times] of Object.entries(periodTimes)"
       :key="number"
-      class="timetable-legend__pair"
+      class="timetable-legend__period"
     >
-      <p class="timetable-legend__pair-date">
+      <p class="timetable-legend__period-date">
         {{ times.start }}
       </p>
 
-      <p class="timetable-legend__pair-number">
+      <p class="timetable-legend__period-number">
         {{ number }}
       </p>
 
-      <p class="timetable-legend__pair-date">
+      <p class="timetable-legend__period-date">
         {{ times.end }}
       </p>
     </div>
@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import { pairTimes } from '@constants/pair-times'
+import { periodTimes } from '@constants/period-times'
 
 export default {
   name: 'timetable-legend',
 
   data: () => ({
-    pairTimes,
+    periodTimes,
   }),
 }
 </script>
@@ -45,7 +45,7 @@ export default {
     border-bottom: 0.1rem solid $color-secondary;
   }
 
-  &__pair {
+  &__period {
     height: 11rem;
     padding: 1rem 0;
     display: flex;
