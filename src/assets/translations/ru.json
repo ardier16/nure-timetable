@@ -14,7 +14,7 @@
     "search-btn": "Поиск"
   },
 
-  "pair-types-short": {
+  "period-types-short": {
     "lecture": "ЛК",
     "practice": "ПЗ",
     "lab": "ЛБ",
@@ -22,5 +22,22 @@
     "test": "ЗАЧ",
     "exam": "ЭКЗ",
     "course-work": "КП"
+  },
+
+  "period-types": {
+    "lecture": "Лекция",
+    "practice": "Практическое занятие",
+    "lab": "Лабораторная работа",
+    "consultation": "Консультация",
+    "test": "Зачет",
+    "exam": "Экзамен",
+    "course-work": "Курсовой проект"
+  },
+
+  "period-details": {
+    "type": "Тип",
+    "auditory": "Аудитория",
+    "teacher": "Преподаватель",
+    "groups": "Группы"
   }
 }

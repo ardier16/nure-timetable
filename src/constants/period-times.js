@@ -1,4 +1,4 @@
-export const pairTimes = {
+export const periodTimes = {
   1: { start: '7:45', end: '9:20' },
   2: { start: '9:30', end: '11:05' },
   3: { start: '11:15', end: '12:50' },

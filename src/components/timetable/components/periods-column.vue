@@ -1,47 +1,53 @@
 <template>
   <div
-    class="pairs-column"
+    class="periods-column"
     :class="[
-      isDayLast ? 'pairs-column--last' : 'pairs-column--present',
+      isDayLast ? 'periods-column--last' : 'periods-column--present',
     ]"
   >
-    <p class="pairs-column__header">
+    <p class="periods-column__header">
       <span
-        class="pairs-column__date"
-        :class="!pairs.length && 'pairs-column__date--off'"
+        class="periods-column__date"
+        :class="!periods.length && 'periods-column__date--off'"
       >
         {{ date | formatDate }}
       </span>
     </p>
 
-    <pairs-cell
-      v-for="number of Object.keys(pairTimes)"
+    <periods-cell
+      v-for="number of Object.keys(periodTimes)"
       :key="number"
-      :pairs="pairs.filter(p => p.number === number)"
-      class="pairs-column__cell"
+      class="periods-column__cell"
+      :periods="periods.filter(p => p.number === number)"
+      @period-selected="$emit(events.periodSelected, $event)"
     />
   </div>
 </template>
 
 <script>
-import PairsCell from './pairs-cell'
+import PeriodsCell from './periods-cell'
 
-import { pairTimes } from '@constants/pair-times'
+import { periodTimes } from '@constants/period-times'
 import { DateUtil } from '@utils/date.util'
 
+const events = {
+  periodSelected: 'period-selected',
+}
+
 export default {
-  name: 'pairs-column',
+  name: 'periods-column',
   components: {
-    PairsCell,
+    PeriodsCell,
   },
 
   props: {
     date: { type: Date, required: true },
-    pairs: { type: Array, required: true },
+    periods: { type: Array, required: true },
   },
 
   data: () => ({
-    pairTimes,
+    periodTimes,
+    events,
   }),
 
   computed: {
@@ -54,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pairs-column {
+.periods-column {
   width: 14rem;
 
   &--last {

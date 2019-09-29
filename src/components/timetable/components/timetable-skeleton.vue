@@ -2,11 +2,11 @@
   <div class="timetable-skeleton">
     <legend-skeleton class="timetable-skeleton__legend" />
 
-    <div class="timetable-skeleton__pairs">
-      <pairs-column-skeleton
+    <div class="timetable-skeleton__periods">
+      <periods-column-skeleton
         v-for="i in 9"
         :key="i"
-        class="timetable-skeleton__pairs-column"
+        class="timetable-skeleton__periods-column"
       />
     </div>
   </div>
@@ -14,13 +14,13 @@
 
 <script>
 import LegendSkeleton from './legend-skeleton'
-import PairsColumnSkeleton from './pairs-column-skeleton'
+import PeriodsColumnSkeleton from './periods-column-skeleton'
 
 export default {
   name: 'timetable-skeleton',
   components: {
     LegendSkeleton,
-    PairsColumnSkeleton,
+    PeriodsColumnSkeleton,
   },
 }
 </script>
@@ -33,7 +33,7 @@ export default {
     width: 6rem;
   }
 
-  &__pairs {
+  &__periods {
     width: calc(100% - 6rem);
     display: flex;
     overflow-x: scroll;

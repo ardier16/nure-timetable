@@ -1,7 +1,7 @@
 <template>
   <div class="timetable">
-    <template v-if="isLoaded && pairs.length">
-      <pairs-table :pairs="pairs" />
+    <template v-if="isLoaded && periods.length">
+      <periods-table :periods="periods" />
     </template>
 
     <template v-else-if="!isLoaded">
@@ -12,7 +12,7 @@
 
 <script>
 import TimetableSkeleton from './components/timetable-skeleton'
-import PairsTable from './components/pairs-table'
+import PeriodsTable from './components/periods-table'
 
 import { mapActions, mapGetters } from 'vuex'
 import { types } from '@store/types'
@@ -21,7 +21,7 @@ export default {
   name: 'timetable',
   components: {
     TimetableSkeleton,
-    PairsTable,
+    PeriodsTable,
   },
 
   data: () => ({
@@ -30,7 +30,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      pairs: types.pairs,
+      periods: types.periods,
     }),
   },
 

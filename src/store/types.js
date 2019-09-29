@@ -3,7 +3,7 @@ const mutations = {
   SET_LOCALE: 'SET_LOCALE',
 
   // timetable
-  SET_PAIRS: 'SET_PAIRS',
+  SET_PERIODS: 'SET_PERIODS',
 }
 
 const actions = {
@@ -19,7 +19,7 @@ const getters = {
   locale: 'locale',
 
   // timetable
-  pairs: 'pairs',
+  periods: 'periods',
 }
 
 export const types = {

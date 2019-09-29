@@ -1,34 +1,34 @@
 <template>
-  <div class="pair-card-skeleton">
-    <div class="pair-card-skeleton__title">
-      <span class="pair-card-skeleton__line">
+  <div class="period-card-skeleton">
+    <div class="period-card-skeleton__title">
+      <span class="period-card-skeleton__line">
         &nbsp;
       </span>
     </div>
 
-    <div class="pair-card-skeleton__type">
-      <p class="pair-card-skeleton__type-icon">
-        <span class="pair-card-skeleton__line">
+    <div class="period-card-skeleton__type">
+      <p class="period-card-skeleton__type-icon">
+        <span class="period-card-skeleton__line">
           &nbsp;
         </span>
       </p>
 
-      <p class="pair-card-skeleton__type-text">
-        <span class="pair-card-skeleton__line">
+      <p class="period-card-skeleton__type-text">
+        <span class="period-card-skeleton__line">
           &nbsp;
         </span>
       </p>
     </div>
 
-    <div class="pair-card-skeleton__location">
-      <p class="pair-card-skeleton__location-icon">
-        <span class="pair-card-skeleton__line">
+    <div class="period-card-skeleton__location">
+      <p class="period-card-skeleton__location-icon">
+        <span class="period-card-skeleton__line">
         &nbsp;
         </span>
       </p>
 
-      <p class="pair-card-skeleton__location-text">
-        <span class="pair-card-skeleton__line">
+      <p class="period-card-skeleton__location-text">
+        <span class="period-card-skeleton__line">
           &nbsp;
         </span>
       </p>
@@ -38,12 +38,12 @@
 
 <script>
 export default {
-  name: 'pair-card-skeleton',
+  name: 'period-card-skeleton',
 }
 </script>
 
 <style lang="scss" scoped>
-.pair-card-skeleton {
+.period-card-skeleton {
   padding: 1.2rem;
   border: 0.1rem solid $color-skeleton;
   width: 12rem;
@@ -76,7 +76,7 @@ export default {
       display: flex;
       align-items: center;
 
-      .pair-card-skeleton__line {
+      .period-card-skeleton__line {
         padding: 0 0.4rem;
         width: 1rem;
         font-size: 0.85rem;
@@ -88,7 +88,7 @@ export default {
       display: flex;
       align-items: center;
 
-      .pair-card-skeleton__line {
+      .period-card-skeleton__line {
         padding: 0 2rem;
         width: 5rem;
         font-size: 0.85rem;
@@ -105,7 +105,7 @@ export default {
       display: flex;
       align-items: center;
 
-      .pair-card-skeleton__line {
+      .period-card-skeleton__line {
         padding: 0 0.4rem;
         width: 1rem;
         font-size: 0.85rem;
@@ -117,7 +117,7 @@ export default {
       display: flex;
       align-items: center;
 
-      .pair-card-skeleton__line {
+      .period-card-skeleton__line {
         padding: 0 2rem;
         width: 5rem;
         font-size: 0.85rem;

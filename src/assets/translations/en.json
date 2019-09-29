@@ -14,7 +14,7 @@
     "search-btn": "Search"
   },
 
-  "pair-types-short": {
+  "period-types-short": {
     "lecture": "Lecture",
     "practice": "Practice",
     "lab": "Lab",
@@ -22,5 +22,22 @@
     "test": "Test",
     "exam": "Exam",
     "course-work": "Course work"
+  },
+
+  "period-types": {
+    "lecture": "Lecture",
+    "practice": "Practice",
+    "lab": "Laboratory work",
+    "consultation": "Consultation",
+    "test": "Test",
+    "exam": "Exam",
+    "course-work": "Course work"
+  },
+
+  "period-details": {
+    "type": "Type",
+    "auditory": "Auditory",
+    "teacher": "Teacher",
+    "groups": "Groups"
   }
 }
