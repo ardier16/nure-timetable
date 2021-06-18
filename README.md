@@ -2,11 +2,11 @@
 
 ### Clone the repository
 
-Using SSH: `git clone git@github.com:ardier16/grate-client.git`
+Using SSH: `git clone git@github.com:ardier16/nure-timetable.git`
 
 or
 
-Using HTTPS: `git clone https://github.com/ardier16/grate-client.git`
+Using HTTPS: `git clone https://github.com/ardier16/nure-timetable.git`
 
 ### Prepare the environment
 
